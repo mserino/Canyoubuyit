@@ -1,9 +1,17 @@
 $(document).ready(function(){
 
 	$('#submit').on('click', function(){
-		// $('#formValue').text($('input[name=select]:checked', '#needItSelection').val());
-		var needItValue = $('input[name=select]:checked', '#needItSelection').val();
-		if ( needItValue === 'yes') {
+		
+		var yesCounter = 0;
+		$('.needItSelection').each(function(){
+			var selection = $('input[name=select]:checked', this).val();
+			if (selection === 'yes') {
+				yesCounter += 1;
+			}
+		});
+		console.log(yesCounter);
+
+		if(yesCounter >= 2){
 			$('#formValue').text('APPROVED');
 		} else {
 			$('#formValue').text('DENIED');
