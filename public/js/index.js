@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	$('#submit').on('click', function(){
-		
+
 		var yesCounter = 0;
 		$('.needItSelection').each(function(){
 			var selection = $('input[name=select]:checked', this).val();
@@ -15,6 +15,12 @@ $(document).ready(function(){
 			$('#formValue').text('APPROVED');
 		} else {
 			$('#formValue').text('DENIED');
+		}
+
+		var harryPotterSelectionValue = $('input[name=select]:checked', '.harryPotterSelection').val();
+		
+		if(harryPotterSelectionValue === 'yes') {
+			$('#formValue').text('APPROVED');
 		}
 	});
 });
