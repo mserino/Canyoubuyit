@@ -1,3 +1,31 @@
-body {
-	color: blue;
+$button-background: $brand-primary;
+
+li {
+	list-style-type: none;
+}
+
+.selection {
+	// background-color: lightyellow;
+	margin-bottom: 10px;
+}
+
+.list-group-item {
+	margin-bottom: 0 !important;
+}
+
+.button {
+	background-color: $button-background;
+	border-radius: 0;
+
+	&:hover {
+		background-color: darken($button-background, 10%);
+	}
+}
+
+.selectedBox {
+	background-color: darken(red, 10%);
+
+	&:hover {
+		background-color: darken(red, 10%);
+	}
 }

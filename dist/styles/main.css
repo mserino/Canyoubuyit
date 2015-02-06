@@ -5126,5 +5126,22 @@ button.close {
     display: none !important; }
  }
 
-body {
-  color: blue; }
+li {
+  list-style-type: none; }
+
+.selection {
+  margin-bottom: 10px; }
+
+.list-group-item {
+  margin-bottom: 0 !important; }
+
+.button {
+  background-color: #337ab7;
+  border-radius: 0; }
+  .button:hover {
+    background-color: #286090; }
+
+.selectedBox {
+  background-color: #cc0000; }
+  .selectedBox:hover {
+    background-color: #cc0000; }

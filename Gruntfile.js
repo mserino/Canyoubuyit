@@ -56,7 +56,7 @@ module.exports = function(grunt) {
                 debug: true
             },
             dev: {
-                src: 'app/scripts/main.js',
+                src: 'app/scripts/*.js',
                 dest: 'dist/scripts/main.js'
             }
         },
