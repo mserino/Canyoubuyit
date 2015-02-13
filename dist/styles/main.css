@@ -5126,22 +5126,82 @@ button.close {
     display: none !important; }
  }
 
+body {
+  background-color: #434A54;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1em; }
+
+.container {
+  background-color: #656D78;
+  padding: 0; }
+
+ul {
+  padding: 0; }
+
 li {
   list-style-type: none; }
 
+.btn {
+  border-radius: 0; }
+
 .selection {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  padding: 0; }
+  .selection__body {
+    background-color: #CCD1D9;
+    border-bottom: 5px solid #AAB2BD;
+    padding: 10px;
+    display: inline-block;
+    font-size: 1.2em; }
+  .selection div.selection__title, .selection div.selection__body {
+    padding: 10px;
+    font-size: 1.5em;
+    margin-bottom: 5px; }
+  .selection__title--one {
+    background-color: #FFCE54;
+    border-bottom: 5px solid #F6BB42; }
+  .selection__title--two {
+    background-color: #A0D468;
+    border-bottom: 5px solid #8CC152; }
+  .selection__title--three {
+    background-color: #4FC1E9;
+    border-bottom: 5px solid #3BAFDA; }
+  .selection__title--four {
+    background-color: #FC6E51;
+    border-bottom: 5px solid #E9573F; }
 
 .list-group-item {
   margin-bottom: 0 !important; }
 
 .button {
-  background-color: #337ab7;
+  background-color: #CCD1D9;
+  border-bottom: 5px solid #AAB2BD;
   border-radius: 0; }
   .button:hover {
-    background-color: #286090; }
+    background-color: #afb7c3; }
 
 .selectedBox {
-  background-color: #cc0000; }
+  background-color: #e8273b;
+  border-bottom: 5px solid #c42737; }
   .selectedBox:hover {
-    background-color: #cc0000; }
+    background-color: #cc0000;
+    border-bottom: 5px solid #c42737; }
+
+.unselectedBox {
+  background-color: #CCD1D9;
+  border-bottom: 5px solid #AAB2BD;
+  border-radius: 0; }
+  .unselectedBox:hover {
+    background-color: #afb7c3; }
+
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 1.2em; }
+
+  ul {
+    padding: 15px; }
+ }
+
+.col-centered {
+  float: none;
+  margin: 0 auto; }

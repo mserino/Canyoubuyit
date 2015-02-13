@@ -1,5 +1,4 @@
-console.log('button ready');
-
 $('.button').on('click', function(){
-	$(this).toggleClass('selectedBox');
+	$(this).addClass('selectedBox').removeClass('unselectedBox');
+	$(this).siblings().removeClass('selectedBox').addClass('unselectedBox');
 });

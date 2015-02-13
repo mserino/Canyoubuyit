@@ -1,12 +1,71 @@
-$button-background: $brand-primary;
+$body-primary: #434A54;
+$body-secondary: #656D78;
+$yellow-primary: #FFCE54;
+$yellow-secondary: #F6BB42;
+$gray-primary: #CCD1D9;
+$gray-secondary: #AAB2BD;
+$green-primary: #A0D468;
+$green-secondary: #8CC152;
+$cyan-primary: #4FC1E9;
+$cyan-secondary: #3BAFDA;
+$red-primary: #FC6E51;
+$red-secondary: #E9573F;
+$magenta-primary: #ED5565;
+$magenta-secondary: #DA4453;
+$button-background: $gray-primary;
+$button-border: $gray-secondary;
 
+body {
+	background-color: $body-primary;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 1em;
+}
+.container {
+	background-color: $body-secondary;
+	padding: 0
+}
+ul {
+	padding: 0;
+}
 li {
 	list-style-type: none;
 }
+.btn {
+	border-radius: 0;
+}
 
 .selection {
-	// background-color: lightyellow;
 	margin-bottom: 10px;
+	padding: 0;
+
+	&__body {
+		background-color: $gray-primary;
+		border-bottom: 5px solid $gray-secondary;
+		padding: 10px;
+		display: inline-block;
+		font-size: 1.2em;
+	}
+	div.selection__title, div.selection__body {
+		padding: 10px;
+		font-size: 1.5em;
+		margin-bottom: 5px;
+	}
+	&__title--one {
+		background-color: $yellow-primary;
+		border-bottom: 5px solid $yellow-secondary;
+	}
+	&__title--two {
+		background-color: $green-primary;
+		border-bottom: 5px solid $green-secondary;
+	}
+	&__title--three {
+		background-color: $cyan-primary;
+		border-bottom: 5px solid $cyan-secondary;
+	}
+	&__title--four {
+		background-color: $red-primary;
+		border-bottom: 5px solid $red-secondary;
+	}
 }
 
 .list-group-item {
@@ -15,6 +74,7 @@ li {
 
 .button {
 	background-color: $button-background;
+	border-bottom: 5px solid $button-border;
 	border-radius: 0;
 
 	&:hover {
@@ -23,9 +83,32 @@ li {
 }
 
 .selectedBox {
-	background-color: darken(red, 10%);
+	background-color: darken($magenta-primary, 10%);
+	border-bottom: 5px solid darken($magenta-secondary, 10%);
 
 	&:hover {
 		background-color: darken(red, 10%);
+		border-bottom: 5px solid darken($magenta-secondary, 10%);
+
+	}
+}
+
+.unselectedBox {
+	background-color: $button-background;
+	border-bottom: 5px solid $button-border;
+	border-radius: 0;
+
+	&:hover {
+		background-color: darken($button-background, 10%);
+	}
+}
+
+@media only screen and (min-width: $screen-sm-min) {
+	body {
+		font-size: 1.2em;
+	}
+
+	ul {
+		padding: 15px;
 	}
 }

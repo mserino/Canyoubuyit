@@ -15,20 +15,20 @@ $(document).ready(function(){
 	};
 
 	var countChecked = function() {
-		var input = $('input:checked');
+		var input = $('.selectedBox');
 		return input;
 	};
 
 	var numberOfYes = function(){
 		var arr = $.grep(countChecked(), function(elem){
-			return checkForYes(elem.value);
+			return checkForYes($(elem).data().attribute);
 		});
 		return arr.length;
 	};
 
 	var potterPresence = function(){
 		var potter = $.grep(countChecked(), function(elem){
-			return checkForPotter(elem.value);
+			return checkForPotter($(elem).data().attribute);
 		});
 		if (potter.length >= 1) {
 			return true;
