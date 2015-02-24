@@ -1,15 +1,14 @@
 $(document).ready(function(){
 
+	var MINIMUM_YES = 2;
 	var numberofForms = $('.selection').length;
-
-	var checkForYes = function(elem) {
-		if (elem ===  'yes') {
-			return true;
-		}
+	var config = {
+		yes: 'yes',
+		potter: 'potter',
 	};
 
-	var checkForPotter = function(elem) {
-		if (elem === 'potter') {
+	var checkFor = function(elem, result) {
+		if (elem === result) {
 			return true;
 		}
 	};
@@ -19,27 +18,23 @@ $(document).ready(function(){
 		return input;
 	};
 
-	var numberOfYes = function(){
-		var arr = $.grep(countChecked(), function(elem){
-			return checkForYes($(elem).data().attribute);
+	var control = function(variable) {
+		var array = $.grep(countChecked(), function(elem){
+			return checkFor($(elem).data().attribute, variable);
 		});
-		return arr.length;
-	};
-
-	var potterPresence = function(){
-		var potter = $.grep(countChecked(), function(elem){
-			return checkForPotter($(elem).data().attribute);
-		});
-		if (potter.length >= 1) {
-			return true;
+		if (variable === config.potter) {
+			if (array.length >= 1) {
+				return true;
+			}
 		}
+		return array.length;
 	};
 
-	var askForApproval = function(n, potter){
+	var askForApproval = function(yes, potter){
 		var result;
 		if (countChecked().length < numberofForms) {
 			result = 'You must submit all the answers';
-		} else if (n >= 2 || potter) {
+		} else if (control(yes) >= MINIMUM_YES || control(potter)) {
 			result = 'Approved';
 		} else {
 			result = 'Denied';
@@ -48,15 +43,16 @@ $(document).ready(function(){
 	};
 
 	var displayResult = function(text){
-		$('.result').text(text);
+		$('.result').hide();
+		if (text === 'Approved') {
+			$('.result').removeClass('Denied').addClass(text);
+		} else {
+			$('.result').removeClass('Approved').addClass(text);
+		}
+		$('.result').text(text).show("puff", {percent:200 }, 700);
 	};
 
 	$('#submit').on('click', function(){
-		// console.log('yes: ' + numberOfYes());
-		// console.log('result: ' + askForApproval(numberOfYes()));
-		// console.log(numberofForms + ' forms');
-		// console.log(countChecked().length + ' selected');
-		// console.log('Potter: ' + potterPresence());
-		displayResult(askForApproval(numberOfYes(), potterPresence()));
+		displayResult(askForApproval(config.yes, config.potter));
 	});
 });

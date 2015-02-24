@@ -1,3 +1,17 @@
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg); /* Safari */
+	-moz-transform: rotate($deg); /* Firefox */
+	-ms-transform: rotate($deg); /* IE */
+	-o-transform: rotate($deg); /* Opera */
+	transform: rotate($deg);
+}
+
+@mixin border-radius($size) {
+	-webkit-border-radius: $size;
+	-moz-border-radius: $size;
+	border-radius: $size;
+}
+
 $body-primary: #434A54;
 $body-secondary: #656D78;
 $yellow-primary: #FFCE54;
@@ -101,6 +115,31 @@ li {
 	&:hover {
 		background-color: darken($button-background, 10%);
 	}
+}
+
+.result {
+	display: none;
+}
+
+.Approved, .Denied {
+	position: fixed;
+	top: 20%;
+	font-size: 50px;
+
+	@include rotate(-40deg);
+	@include border-radius(10px);
+}
+
+.Approved {
+	border:solid 4px rgba(122, 186, 58, 1);
+	color: rgba(122, 186, 58, 1);
+	background-color: rgba(122, 186, 58, 0.5);
+}
+
+.Denied {
+	border:solid 4px rgba(209, 43, 63, 1);
+	color: rgba(209, 43, 63, 1);
+	background-color: rgba(209, 43, 63, 0.5);
 }
 
 @media only screen and (min-width: $screen-sm-min) {

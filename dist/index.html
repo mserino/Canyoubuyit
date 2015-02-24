@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="stylesheet" href="styles/main.css">
 	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville|Raleway' rel='stylesheet' type='text/css'>
+	<title>Title</title>
 </head>
 <body>
 
-<div class="btn button">Button</div>
-
 <section class="container">
 	<ul>
-			<li class="selection col-sm-12 list-group">
-				<div class="selection__title selection__title--one text-center">Do you need it?</div>
-				<div class="text-center">
-					<p class="btn button selection__body col-xs-4 col-centered" data-attribute="yes">Yes</p>
-					<p class="btn button selection__body col-xs-4 col-centered" data-attribute="no">No</p>
-				</div>
-			</li>
-			<li class="selection col-sm-12 list-group">
-				<div class="selection__title selection__title--two text-center">Do you have space for it?</div>
-				<div class="text-center">
-					<p class="btn button selection__body col-xs-4 col-centered" data-attribute="yes">Yes</p>
-					<p class="btn button selection__body col-xs-4 col-centered" data-attribute="no">No</p>
-				</div>
-			</li>
-			<li class="selection col-sm-12 list-group">
-				<div class="selection__title selection__title--three text-center">Would Ala approve?</div>
-				<div class="text-center">
-					<p class="btn button selection__body col-xs-4 col-centered" data-attribute="yes">Yes</p>
-					<p class="btn button selection__body col-xs-4 col-centered" data-attribute="no">No</p>
-				</div>
-			</li>
-			<li class="selection col-sm-12 list-group">
-				<div class="selection__title selection__title--four text-center">Is it related to Harry Potter?</div>
-				<div class="text-center">
-					<p class="btn button selection__body col-xs-4 col-centered" data-attribute="potter">Yes</p>
-					<p class="btn button selection__body col-xs-4 col-centered" data-attribute="no">No</p>
-				</div>
-			</li>
-			<li class="text-center">
-				<p id="submit" class='btn btn-default btn-lg'>Submit</p>
-			</li>
-			<li>
-				<p>RESULT: <span class="result"></span></p>
-			</li>
+		<li class="selection col-xs-12 list-group">
+			<div class="selection__title selection__title--one text-center">Do you need it?</div>
+			<div class="text-center">
+				<p class="btn button selection__body col-xs-4 col-centered" data-attribute="yes">Yes</p>
+				<p class="btn button selection__body col-xs-4 col-centered" data-attribute="no">No</p>
+			</div>
+		</li>
+		<li class="selection col-xs-12 list-group">
+			<div class="selection__title selection__title--two text-center">Do you have space for it?</div>
+			<div class="text-center">
+				<p class="btn button selection__body col-xs-4 col-centered" data-attribute="yes">Yes</p>
+				<p class="btn button selection__body col-xs-4 col-centered" data-attribute="no">No</p>
+			</div>
+		</li>
+		<li class="selection col-xs-12 list-group">
+			<div class="selection__title selection__title--three text-center">Would Ala approve?</div>
+			<div class="text-center">
+				<p class="btn button selection__body col-xs-4 col-centered" data-attribute="yes">Yes</p>
+				<p class="btn button selection__body col-xs-4 col-centered" data-attribute="no">No</p>
+			</div>
+		</li>
+		<li class="selection col-xs-12 list-group">
+			<div class="selection__title selection__title--four text-center">Is it related to Harry Potter?</div>
+			<div class="text-center">
+				<p class="btn button selection__body col-xs-4 col-centered" data-attribute="potter">Yes</p>
+				<p class="btn button selection__body col-xs-4 col-centered" data-attribute="no">No</p>
+			</div>
+		</li>
+		<li class="text-center col-xs-12">
+			<p id="submit" class='btn btn-default btn-lg'>Submit</p>
+		</li>
+		<li class="text-center display-result">
+			<p class="result ui-widget-content ui-corner-all"></p>
+		</li>
 	</ul>
 </section>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
 <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
 <script src="/scripts/main.js"></script>
 </body>
